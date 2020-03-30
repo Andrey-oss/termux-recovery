@@ -8,7 +8,7 @@ if [ -e $file ]; then
 	echo "Writing"
 	chmod +x ${way}/${fiel}
 	cd /data/data/com.termux/files/usr/etc
-	echo "./${way}/${fiel}" >> boot.bootrc
+	echo "bash ${way}/${fiel}" >> boot.bootrc
 	sleep 2
 	echo "Done"
 	sleep 2
