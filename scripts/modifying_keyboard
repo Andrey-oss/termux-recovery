@@ -1,0 +1,11 @@
+cd
+mkdir .termux
+cd .termux
+echo "extra-keys = [ \
+ ['ESC','|','/','HOME','UP','END','PGUP','DEL'], \
+ ['TAB','CTRL','ALT','LEFT','DOWN','RIGHT','PGDN','BKSP'] \
+]" >> termux.properties
+cd /data/data/com.termux/files/usr/bin
+./termux-reload-settings
+cd /data/data/com.termux/scripts
+./termux-recovery

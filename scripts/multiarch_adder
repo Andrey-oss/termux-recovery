@@ -1,0 +1,30 @@
+echo "What architecture do you want to add"
+sleep 0.5
+echo "Avalible architecture"
+sleep 0.5
+echo "......64-bit......"
+echo "arm64"
+sleep 0.5
+echo "aarch64"
+sleep 0.5
+echo "amd64"
+sleep 0.5
+echo ".....32-bit......."
+echo "i386"
+sleep 0.5
+echo "i686"
+sleep 0.5
+echo "armel"
+sleep 0.5
+echo "armhf"
+sleep 1
+echo "Your arch is ↓"
+cd /data/data/com.termux/files/usr/bin
+./dpkg --print-architecture
+echo -ne "> "
+read arch
+./dpkg --add-architecture ${arch}
+echo "Architecture ${arch} added"
+sleep 2
+cd /data/data/com.termux/scripts
+./termux-recovery

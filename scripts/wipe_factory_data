@@ -1,0 +1,10 @@
+echo "Wiping using rm -rf"
+cd /data/data/com.termux
+rm -rf files s* c*
+mkdir files
+mkdir files/home
+cp .termux-recovery files/home
+echo "Wiping data/factory was completed"
+cd /data/data/com.termux/scripts
+sleep 2
+./termux-recovery

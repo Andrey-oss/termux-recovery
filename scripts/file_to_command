@@ -1,0 +1,18 @@
+echo "Enter way to file"
+read way
+cd ${way}
+echo "Enter file"
+read selif
+file="./${selif}"
+if [ -e $file ]; then
+	echo "Writing"
+	cp ${file} /data/data/com.termux/files/usr/bin
+	sleep 2
+	echo "Done"
+	cd /data/data/com.termux/scripts
+	./termux-recovery 
+else 
+	echo "File not found"
+	sleep 2
+	./termux-revovery
+fi 

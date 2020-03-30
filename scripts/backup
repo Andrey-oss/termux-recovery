@@ -1,0 +1,21 @@
+echo "............CREATING....BACKUP............"
+echo " "
+echo "What is your backup name?"
+read backupname
+echo "Its may take a time. Please wait"
+sleep 2
+termux-setup-storage
+cd /storage/emulated/0
+mkdir termux-backup
+cd /data/data/com.termux
+tar -cvf ${backupname}.tar.xz *
+cp -r ${backupname}.tar.xz /storage/emulated/0/termux-backup
+rm ${backupname}
+cd /data/data/com.termux/scripts
+clear
+sleep 2
+echo "Done"
+sleep 1
+echo "Your backup in this internal storage at termux-backup folder"
+sleep 2
+./termux-recovery

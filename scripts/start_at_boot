@@ -1,0 +1,22 @@
+echo "Enter way to file"
+read way
+cd ${way}
+echo "Enter file"
+read fiel
+file="./${fiel}"
+if [ -e $file ]; then
+	echo "Writing"
+	chmod +x ${way}/${fiel}
+	cd /data/data/com.termux/files/usr/etc
+	echo "./${way}/${fiel}" >> boot.bootrc
+	sleep 2
+	echo "Done"
+	sleep 2
+	cd /data/data/com.termux/scripts
+	./termux-recovery
+else 
+	echo "File does not exists"
+	cd /data/data/com.termux/scripts
+	sleep 2
+	./termux-recovery
+fi 

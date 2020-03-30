@@ -1,0 +1,32 @@
+echo "Enter your backup name for restore"
+read backupname
+cd /storage/emulated/0/termux-backup
+file="./${backupname}.tar.xz"
+if [ -e $file ]; then
+	cd ..
+	echo "Deleting all termux files"
+	rm -rf files* c* s*
+	mkdir files
+	mkdir files/home
+	cp .termux-recovery ../files/home
+	echo "Unpacking backup"
+	cd /system/bin
+	./cp -r /storage/emulated/0/termux-backup/${backupname}.tar.xz /data/data/com.termux
+	cd /data/data/com.termux
+	cd /system/bin
+	./tar -xvf /data/data/com.termux/${backupname}.tar.xz -C /data/data/com.termux
+	cd /data/data/com.termux
+	rm ${backupname}.tar.xz
+	sleep 2 
+	clear
+	echo "Done. For using create new session"
+	sleep 2
+	cd /data/data/com.termux/scripts
+	./termux-recovery
+
+else 
+	echo "File does not exists"
+	cd /data/data/com.termux/scripts
+	sleep 2
+	./termux-recovery
+fi 

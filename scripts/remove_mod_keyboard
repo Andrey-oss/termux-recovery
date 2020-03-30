@@ -1,0 +1,6 @@
+cd
+rm -rf .termux
+cd /data/data/com.termux/files/usr/bin
+./termux-reload-settings
+cd /data/data/com.termux/scripts/
+./termux-recovery

@@ -1,0 +1,79 @@
+choice=9
+sleep 2
+clear
+echo "..T..E..R..M..U..X....R..E..C..O..V..E..R..Y.."
+echo " "
+echo "Warning! You can harm termux with its menu!!!"
+sleep 0.6
+echo "1. Start at boot "
+echo "2. File to command "
+echo "3. Backup "
+echo "4. Restore"
+echo "5. Multiarch adder"
+echo "6. Modifying your keyboard "
+echo "7. Remove modifyed keyboard"
+echo "8. Wipe factory/data reset "
+echo "9. Exit"
+while [ $choice -eq 9 ]; do
+read choice
+if [ $choice -eq 1 ] ; then
+clear
+        ./start_at_boot
+
+else                   
+
+        if [ $choice -eq 2 ] ; then
+		 clear
+                 ./file_to_command
+        else
+         
+                if [ $choice -eq 3 ] ; then
+                        clear
+			./backup
+                else
+		if [ $choice -eq 4 ] ; then
+			clear
+			./restore
+else
+		if [ $choice -eq 5 ] ; then
+			clear
+			./multiarch_adder
+else
+		if [ $choice -eq 6 ] ; then
+			clear
+			./modifying_keyboard
+else
+		if [ $choice -eq 7 ] ; then
+			clear
+			./remove_mod_keyboard
+else
+		if [ $choice -eq 8 ] ; then
+			clear
+			./wipe_factory_data
+else
+		if [ $choice -eq 9 ] ; then
+			echo "Exit"
+			exit
+else
+			clear
+                        echo "..T..E..R..M..U..X....R..E..C..O..V..E..R..Y.."
+                        echo "1. Start at boot"
+                        echo "2. File to command"
+                        echo "3. Backup"
+			echo "4. Restore"
+			echo "5. Multiarch adder"
+			echo "6. Modifying keyboard"
+			echo "7. Remove modifyed keyboard"
+			echo "8. Wipe factory/data reset"
+			echo "9. Exit"
+                        choice=9
+                fi   
+        fi
+fi
+fi
+fi
+fi
+fi
+fi
+fi
+done 
