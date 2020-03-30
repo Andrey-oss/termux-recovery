@@ -14,7 +14,10 @@ chmod +x install.sh
 
 For start go to failsafe mode in termux and typing
 
-./.termux-recovery
+cd
+
+
+sh .termux-recovery
 
 Warning! If you dont know how to use it dont install it!!!
 With this project you can harm or kill termux!
