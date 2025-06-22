@@ -1,24 +1,49 @@
-Recovery for termux*
-********************
-If you need make backup or restore then its script for you. If you think that file is not command, its script fix it.
+# Termux Recovery
 
-Installing
+A utility for creating and restoring backups in Termux. Allows you to save packages, configurations, and user data in a convenient format.
 
-git clone https://github.com/Andrey-oss/termux-recovery
+![Termux Logo](https://raw.githubusercontent.com/termux/termux-app/master/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png)
 
+## Features
+
+- Create comprehensive backups:
+  - Installed packages (`apt list --installed`)
+  - Environment variables
+  - Configuration files
+  - User scripts
+- Restore from existing backups
+- Compression support (tar.gz)
+- Simple command-line interface
+
+## Installation
+
+1. Clone the repository:
+```bash
+git clone https://github.com/Andrey-oss/termux-recovery.git
 cd termux-recovery
-
+```
+2. Make the install script executable:
+```bash
 chmod +x install.sh
+```
 
+3. Run the installer:
+```bash
 ./install.sh
+```
 
-For start go to failsafe mode in termux and typing
+### How to use?
+1. Firstly you have to navigate to termux failsafe shell in the session tab
+2. Then you should type this command:
+```bash
+cd; sh .termux-recovery
+```
 
-cd
+### Requirements
+* Termux app
+* Internet connection (optional)
+* Permission for writing data to the internal storage
+* Installed busybox/toybox (if you have root access or custom firmwares)
 
-
-sh .termux-recovery
-
-Warning! If you dont know how to use it dont install it!!!
-With this project you can harm or kill termux!
-I warned you
+### Contributing
+Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
