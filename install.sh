@@ -37,4 +37,4 @@ cp .termux-recovery $HOME
 sleep 2
 echo "4/4 step done"
 sleep 2
-echo "For launch recovery, typing ./.termux-recovery. Warning! Its command need write at failsafe mode!!!"
+echo "For launch recovery, typing ./.termux-recovery. Warning! This command must be entered in failsafe mode!!!"
